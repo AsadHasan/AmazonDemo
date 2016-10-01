@@ -2,7 +2,6 @@ package PageObjects;
 
 import BrowserFactory.Browser;
 import StepDefinitions.SpringConfig;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -73,7 +72,7 @@ public class Homepage extends BasePage {
 
     public Homepage submitSearch(){
         browser.getWait().until(ExpectedConditions.elementToBeClickable(searchSubmitButton));
-        browser.getActions(driver).moveToElement(searchSubmitButton).click().build().perform();
+        browser.getActions().moveToElement(searchSubmitButton).click().build().perform();
         return this;
     }
 }

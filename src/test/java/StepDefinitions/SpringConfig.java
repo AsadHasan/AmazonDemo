@@ -1,14 +1,12 @@
 package StepDefinitions;
 
-import BrowserFactory.Browser;
-import PageObjects.Homepage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.test.context.ContextConfiguration;
 
 /**
  * Created by asad.hasan on 17/08/2016.
@@ -16,14 +14,19 @@ import org.springframework.test.context.ContextConfiguration;
 @Configuration
 @ComponentScan({"PageObjects","StepDefinitions","BrowserFactory"})
 public class SpringConfig {
-
-  /*  @Bean
-    public Homepage homepage(){
-        return new Homepage(chrome());
-    }*/
-
+/*
     @Bean
     public WebDriver chrome(){
         return new ChromeDriver();
+    }*/
+
+    @Bean
+    public WebDriver htmlunit(){
+        return new HtmlUnitDriver();
+    }
+
+    @Bean
+    public WebDriver phantom(){
+        return new PhantomJSDriver();
     }
 }
