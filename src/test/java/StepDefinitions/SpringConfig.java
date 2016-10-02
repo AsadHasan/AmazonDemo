@@ -14,12 +14,12 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @ComponentScan({"PageObjects","StepDefinitions","BrowserFactory"})
 public class SpringConfig {
-/*
+
     @Bean
     public WebDriver chrome(){
         return new ChromeDriver();
-    }*/
-
+    }
+/*
     @Bean
     public WebDriver htmlunit(){
         return new HtmlUnitDriver();
@@ -28,5 +28,5 @@ public class SpringConfig {
     @Bean
     public WebDriver phantom(){
         return new PhantomJSDriver();
-    }
+    }*/
 }

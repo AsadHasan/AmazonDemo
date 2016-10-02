@@ -25,7 +25,7 @@ import java.util.Map;
 public class Browser {
 
     @Autowired
-    @Qualifier("phantom")
+    @Qualifier("chrome")
     protected WebDriver driver;
 
     protected WebDriverWait wait;
@@ -85,7 +85,7 @@ public class Browser {
     }
 
     public Browser maximise(){
-     //   driver.manage().window().maximize();
+        driver.manage().window().maximize();
         return this;
     }
 }

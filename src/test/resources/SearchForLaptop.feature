@@ -6,8 +6,10 @@ Feature: Search for laptop
 
     Scenario Outline:
       When I type "<text>" in the search bar
-      Then I should see "<suggestions>" appear in auto-complete
+      And I select "<suggestions>" from auto-complete
+      And submit search
 
-      Examples:
+Examples:
       |text|suggestions|
       |laptop|laptop in Computers|
+

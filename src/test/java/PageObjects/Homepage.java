@@ -2,6 +2,8 @@ package PageObjects;
 
 import BrowserFactory.Browser;
 import StepDefinitions.SpringConfig;
+import org.openqa.selenium.Keys;
+//import org.apache.xalan.xsltc.compiler.sym;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -10,6 +12,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import org.springframework.test.context.ContextConfiguration;
 
@@ -46,13 +49,19 @@ public class Homepage extends BasePage {
     private WebElement departmentsDropdown;
 
     @Autowired
-    public Homepage(WebDriver driver){
+    public Homepage(@Qualifier("chrome")WebDriver driver){
         super(driver);
         PageFactory.initElements(driver,this);
     }
 
     public Homepage searchForItem(String text){
-        searchTextBox.sendKeys(text);
+        searchTextBox.sendKeys("text");
+        return this;
+    }
+    
+     public Homepage autoComplete(){
+        searchTextBox.sendKeys(Keys.ARROW_DOWN);
+        searchTextBox.sendKeys(Keys.ENTER);
         return this;
     }
 

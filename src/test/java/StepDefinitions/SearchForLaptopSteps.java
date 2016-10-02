@@ -6,6 +6,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.junit.Assert;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +40,7 @@ public class SearchForLaptopSteps extends Browser{
         }
     }
 
+    //@When("^I type \"([^\"]*)\" in the search bar$")
     @When("^I type \"([^\"]*)\" in the search bar$")
     public void iTypeInTheSearchBar(String text){
         try {
@@ -49,9 +51,25 @@ public class SearchForLaptopSteps extends Browser{
         }
     }
 
-    @Then("^I should see \"([^\"]*)\" appear in auto-complete$")
-    public void iShouldSeeAppearInAutoComplete(String suggestions) throws Throwable {
-
+    @And("^I select \"([^\"]*)\" from auto-complete$")
+    public void iSelectSuggestionsFromAutoComplete(String suggestions){
+        try {
+            homepage.autoComplete();
+        }
+        catch (NullPointerException e){
+            logger.debug("Exception",e);
+        }
     }
-}
+    
+     @And("^submit search$")
+     public void submitSearch(){
+          try {
+          //  homepage.submitSearch();
+        }
+        catch (NullPointerException e){
+          //  logger.debug("Exception",e);
+        }
+     }
+    }
+             
 
