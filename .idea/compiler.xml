@@ -19,8 +19,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="AmazonDemo_main" target="1.5" />
-      <module name="AmazonDemo_test" target="1.5" />
+      <module name="AmazonDemo_main" target="1.8" />
+      <module name="AmazonDemo_test" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
