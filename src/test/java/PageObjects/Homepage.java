@@ -28,23 +28,23 @@ public class Homepage extends BasePage {
     @Autowired
     private Browser browser;
 
-    @CacheLookup
+  //  @CacheLookup
     @FindBy(id = "searchDropdownBox")
     private WebElement searchDropdownBox;
 
-    @CacheLookup
+   // @CacheLookup
     @FindBy(id = "twotabsearchtextbox")
     private WebElement searchTextBox;
 
-    @CacheLookup
+  //  @CacheLookup
     @FindBy(id = "nav-search-submit-text")
     private WebElement searchSubmitButton;
 
-    @CacheLookup
+  //  @CacheLookup
     @FindBy(id = "nav-link-yourAccount")
     private WebElement yourAccount;
 
-    @CacheLookup
+  //  @CacheLookup
     @FindBy(id = "nav-link-shopall")
     private WebElement departmentsDropdown;
 
@@ -53,6 +53,12 @@ public class Homepage extends BasePage {
         super(driver);
         PageFactory.initElements(driver,this);
     }
+/*
+    public Homepage navigateToHomepage(){
+        browser.getDriver("chrome")
+                .get("https://www.amazon.com/");
+        return this;
+    }*/
 
     public Homepage searchForItem(String text){
         searchTextBox.sendKeys("text");

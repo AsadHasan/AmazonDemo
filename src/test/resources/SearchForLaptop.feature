@@ -12,4 +12,5 @@ Feature: Search for laptop
 Examples:
       |text|suggestions|
       |laptop|laptop in Computers|
+      |camera|test|
 

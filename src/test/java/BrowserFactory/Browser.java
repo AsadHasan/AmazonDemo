@@ -38,9 +38,9 @@ public class Browser {
 /*
     protected Browser(){
         annotationConfigApplicationContext=new AnnotationConfigApplicationContext(SpringConfig.class);
-    }
-*/
-    public WebDriver getBrowser(String browserName) {
+    }*/
+
+    public WebDriver getDriver(String browserName) {
         annotationConfigApplicationContext=new AnnotationConfigApplicationContext(SpringConfig.class);
         WebDriver driver = null;
 

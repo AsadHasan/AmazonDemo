@@ -2,6 +2,7 @@ package StepDefinitions;
 
 import BrowserFactory.Browser;
 import PageObjects.Homepage;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -40,7 +41,6 @@ public class SearchForLaptopSteps extends Browser{
         }
     }
 
-    //@When("^I type \"([^\"]*)\" in the search bar$")
     @When("^I type \"([^\"]*)\" in the search bar$")
     public void iTypeInTheSearchBar(String text){
         try {
@@ -52,7 +52,7 @@ public class SearchForLaptopSteps extends Browser{
     }
 
     @And("^I select \"([^\"]*)\" from auto-complete$")
-    public void iSelectSuggestionsFromAutoComplete(String suggestions){
+    public void iSelectFromAutoComplete(String suggestions){
         try {
             homepage.autoComplete();
         }
@@ -60,16 +60,12 @@ public class SearchForLaptopSteps extends Browser{
             logger.debug("Exception",e);
         }
     }
-    
-     @And("^submit search$")
-     public void submitSearch(){
-          try {
-          //  homepage.submitSearch();
-        }
-        catch (NullPointerException e){
-          //  logger.debug("Exception",e);
-        }
-     }
+
+    @And("^submit search$")
+    public void submitSearch(){
+        // Write code here that turns the phrase above into concrete actions
+
     }
+}
              
 

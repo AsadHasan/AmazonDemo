@@ -16,11 +16,11 @@ import org.springframework.stereotype.Component;
 public class BasePage {
     protected WebDriver driver;
 
-    @CacheLookup
+   // @CacheLookup
     @FindBy(id = "navbar")
     private WebElement header;
 
-    @CacheLookup
+  //  @CacheLookup
     @FindBy(id = "navFooter")
     private WebElement footer;
 
